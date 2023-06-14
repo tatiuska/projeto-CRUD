@@ -1,4 +1,4 @@
-<!-- Projeto CRUD -->
+<!-- Projeto CRUD: Formulário para cadastro de funcionários -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
