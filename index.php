@@ -40,6 +40,8 @@
                         <input type="submit" class="btn btn-success" value="Enviar">
                     </div>
                 </form>
+                <?php 
+                ?>
             </div>
         </div>
     </div>
