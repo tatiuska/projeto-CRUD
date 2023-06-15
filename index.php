@@ -22,7 +22,7 @@
                         <p>Sistema simplificado de cadastros. Base de estudos para a criação de sistemas Web com PHP e MySQL. Clique no botão abaixo para iniciar seu cadastro.</p>
                         <a href="cadastro.php" class="btn btn-primary">Cadastro</a><br>
                         <hr>
-                        <a href="pesquisa.php" class="btn btn-secondary">Pesquisar</a>
+                        <a href="pesquisa.php" class="btn btn-primary">Pesquisar</a>
                     </div>
                 </div>
             </div>
