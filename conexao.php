@@ -11,4 +11,11 @@
         // echo "Conexão realizada com sucesso!"; - Essa linha foi usada para testar a conexão.
     } else
         echo "Erro de conexão!";
+
+    // Função para mostrar a mensagem de "Cadastrado com sucesso" mais apresentável.
+    // Parâmetro $texto = a mensagem que vai aparecer para o usuário.
+    // Parâmetro $tipo, a classe específica para a mensagem ser exibida em verde ou em vermelho.
+    function mensagem($texto, $tipo){
+        echo "<div class='alert alert-$tipo' role='alert'>$texto</div>";
+    }
 ?>

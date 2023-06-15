@@ -18,7 +18,7 @@
                 <form action="cadastro-script.php" method="POST">
                     <div class="form-group">
                         <label for="nome" class="form-label">Nome completo</label>
-                        <input type="text" class="form-control" name="nome">
+                        <input type="text" class="form-control" name="nome" required> <!-- faz com que não aceite formulários sem nome -->
                     </div>
                     <div class="form-group">
                         <label for="endereco" class="form-label">Endereço</label>
