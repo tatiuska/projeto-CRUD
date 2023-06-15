@@ -40,6 +40,7 @@
                         <input type="submit" class="btn btn-success" value="Enviar">
                     </div>
                 </form>
+                <a href="index.php" class="btn btn-outline-primary">Voltar para o início</a>
                 <?php 
                 ?>
             </div>
