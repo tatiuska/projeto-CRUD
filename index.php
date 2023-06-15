@@ -7,41 +7,24 @@
 
     <!-- CSS Bootstrap -->
      <link href="css/bootstrap.min.css" rel="stylesheet">
-    <title>Cadastro</title>
+    <title>Empresa</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Cadastro</h1>
-                <!-- Formulário para cadastro de funcionários -->
-                <form action="cadastro-script.php" method="POST">
-                    <div class="form-group">
-                        <label for="nome" class="form-label">Nome completo</label>
-                        <input type="text" class="form-control" name="nome" required> <!-- faz com que não aceite formulários sem nome -->
+                <div class="row g-0 bg-body-secondary position-relative">
+                    <div class="col-md-6 mb-md-0 p-md-4">
+                        <img src="./image/img01.jpg" class="w-100" alt="van life">
                     </div>
-                    <div class="form-group">
-                        <label for="endereco" class="form-label">Endereço</label>
-                        <input type="text" class="form-control" name="endereco">
+                    <div class="col-md-6 p-4 ps-md-0">
+                        <h5 class="mt-0">Cadastro Web</h5>
+                        <p>Sistema simplificado de cadastros. Base de estudos para a criação de sistemas Web com PHP e MySQL. Clique no botão abaixo para iniciar seu cadastro.</p>
+                        <a href="cadastro.php" class="btn btn-primary">Cadastro</a><br>
+                        <hr>
+                        <a href="pesquisa.php" class="btn btn-secondary">Pesquisar</a>
                     </div>
-                    <div class="form-group">
-                        <label for="telefone" class="form-label">Telefone</label>
-                        <input type="text" class="form-control" name="telefone">
-                    </div>
-                        <div class="form-group">
-                        <label for="email" class="form-label">E-Mail</label>
-                        <input type="email" class="form-control" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="dt_nasc" class="form-label">Data de Nascimento</label>
-                        <input type="date" class="form-control" name="dt_nasc">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="Enviar">
-                    </div>
-                </form>
-                <?php 
-                ?>
+                </div>
             </div>
         </div>
     </div>
