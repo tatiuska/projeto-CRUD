@@ -42,6 +42,7 @@
                             <th scope="col">Telefone</th>
                             <th scope="col">Data Nascimento</th>
                             <th scope="col">E-Mail</th>
+                            <th scope="col">Funções</th> <!-- Coluna onde ficarão os botões para editar e excluir cadastro -->
                         </tr>
                     </thead>
                     <tbody>
@@ -54,6 +55,7 @@
                                 $endereco = $linha['endereco'];
                                 $telefone = $linha['telefone'];
                                 $dt_nasc = $linha['dt_nasc'];
+                                $dt_nasc = mostra_data($dt_nasc); // Chamando a função mostra_data, que altera a apresentação da data de nascimento.
                                 $email = $linha['email'];
                                 
                                 // Imprimindo os dados de saída do banco de dados.
@@ -64,6 +66,7 @@
                                         <td>$telefone</td>
                                         <td>$dt_nasc</td>
                                         <td>$email</td>
+                                        <td></td>
                                 </tr>";
 
                             }
