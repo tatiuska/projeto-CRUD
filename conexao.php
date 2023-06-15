@@ -19,4 +19,11 @@
     function mensagem($texto, $tipo){
         echo "<div class='alert alert-$tipo' role='alert'>$texto</div>";
     }
+
+    // Função para modificar a exebição da data de nascimento (para dia/mês/ano).
+    function mostra_data($data){
+        $d = explode('-', $data);
+        $escreve = $d[2] . "/" . $d[1] . "/" . $d[0];
+        return $escreve; 
+    }
 ?>
