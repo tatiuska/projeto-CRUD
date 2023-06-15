@@ -12,9 +12,9 @@
 <body>
     <!-- Script para uso do método POST -->
     <?php 
-        $pesquisa = $_POST['busca'] ?? '';
+        $pesquisa = $_POST['busca'] ?? ''; // Uso do operador de coaslescência nula para o caso do usuário não inserir nome algum na pesquisa.
 
-        include "conexao.php";
+        include "conexao.php"; // Inclusão do arquivo onde está o script para a conexão com o banco de dados.
 
         $sql = "SELECT * FROM pessoas WHERE nome LIKE '%$pesquisa%'";
 
@@ -66,8 +66,12 @@
                                         <td>$telefone</td>
                                         <td>$dt_nasc</td>
                                         <td>$email</td>
-                                        <td></td>
-                                </tr>";
+                                        <td>
+                                            <a href='#' class='btn btn-outline-success btn-sm'>Editar</a> 
+                                            <a href='#' class='btn btn-outline-danger btn-sm'>Excluir</a>
+                                        </td>
+                                    </tr>"
+                                ;
 
                             }
 
