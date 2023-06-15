@@ -12,7 +12,6 @@
 <body>
     <!-- Script para uso do método POST -->
     <?php 
-        
         $pesquisa = $_POST['busca'] ?? '';
 
         include "conexao.php";
@@ -20,17 +19,8 @@
         $sql = "SELECT * FROM pessoas WHERE nome LIKE '%$pesquisa%'";
 
         $dados = mysqli_query($conexao, $sql); // A variável $dados irá receber todos os objetos do banco de dados que encontrar.
-
-        // Percorrer os dados, caso existam.
-        // Função que percorre o vetor e marca o próximo, passa como parâmetro a variável $dados.
-        while ($linha = mysqli_fetch_assoc($dados)) {
-            foreach ($linha as $key => $value) {
-                echo "$key: $value<br>";
-            }
-            echo "<hr>";
-        }
-
     ?>
+
     <div class="container">
         <div class="row">
             <div class="col">
@@ -38,7 +28,7 @@
                 <nav class="navbar bg-body-tertiary">
                     <div class="container-fluid">
                         <form class="d-flex" role="search" action="pesquisa.php" method="POST">
-                            <input class="form-control me-2" type="search" placeholder="Nome" aria-label="Search" name="busca">
+                            <input class="form-control me-2" type="search" placeholder="Nome" aria-label="Search" name="busca" autofocus>
                             <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                         </form>
                     </div>
@@ -55,14 +45,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
+                        <?php
+                            // Percorrer os dados, caso existam.
+                            // Função que percorre o vetor e marca o próximo, passa como parâmetro a variável $dados.
+                            while ($linha = mysqli_fetch_assoc($dados)) {
+                                $id_pessoa = $linha['id_pessoa'];
+                                $nome = $linha['nome'];
+                                $endereco = $linha['endereco'];
+                                $telefone = $linha['telefone'];
+                                $dt_nasc = $linha['dt_nasc'];
+                                $email = $linha['email'];
+                                
+                                // Imprimindo os dados de saída do banco de dados.
+                                echo "<tr>
+                                        <th scope='row'>$id_pessoa</th>
+                                        <td>$nome</td>
+                                        <td>$endereco</td>
+                                        <td>$telefone</td>
+                                        <td>$dt_nasc</td>
+                                        <td>$email</td>
+                                </tr>";
+
+                            }
+
+                        ?>
                     </tbody>
                 </table>
                 <a href="index.php" class="btn btn-outline-primary">Voltar para o início</a>
