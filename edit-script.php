@@ -14,9 +14,10 @@
         <div class="row">
             <?php 
                 include "conexao.php";
+                include "funcoes.php";
 
                 // Implementação do método POST para captação dos dados informados pelo funcionário.
-                $id = $_POST['id'];
+                $id = $_POST['id'] ?? null;
                 $nome = $_POST['nome'];
                 $endereco = $_POST['endereco'];
                 $telefone = $_POST['telefone'];
@@ -24,7 +25,7 @@
                 $dt_nasc = $_POST['dt_nasc'];
 
                 // String que irá inserir os valores das variáveis do formulário na variável $sql
-                $sql = "UPDATE `pessoas` SET nome = '$nome', endereco = '$endereco', telefone = '$telefone', email = '$email', dt_nasc = '$dt_nasc' WHERE id_pessoa = $id";
+                $sql = "UPDATE `pessoas` SET `nome` = '$nome', `endereco` = '$endereco', `telefone` = '$telefone', `email` = '$email', `dt_nasc` = '$dt_nasc' WHERE `id_pessoa` = '$id'";
 
                 // Função para inserir os dados no banco de dados.
                 // Requer dois parãmetros: qual a conexão e a instrução SQL que se deseja passar, e vai retornar se a inserção deu certo ou não.

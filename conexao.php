@@ -12,18 +12,4 @@
     } else {
         echo "Erro de conexão!";
     }
-
-    // Função para mostrar a mensagem de "Cadastrado com sucesso" mais apresentável.
-    // Parâmetro $texto = a mensagem que vai aparecer para o usuário.
-    // Parâmetro $tipo, a classe específica para a mensagem ser exibida em verde ou em vermelho.
-    function mensagem($texto, $tipo){
-        echo "<div class='alert alert-$tipo' role='alert'>$texto</div>";
-    }
-
-    // Função para modificar a exebição da data de nascimento (para dia/mês/ano).
-    function mostra_data($data){
-        $d = explode('-', $data);
-        $escreve = $d[2] . "/" . $d[1] . "/" . $d[0];
-        return $escreve; 
-    }
 ?>

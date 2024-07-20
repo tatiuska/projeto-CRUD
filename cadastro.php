@@ -36,6 +36,7 @@
                         <label for="dt_nasc" class="form-label">Data de Nascimento</label>
                         <input type="date" class="form-control" name="dt_nasc">
                     </div>
+                    </br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Enviar">
                     </div>

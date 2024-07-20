@@ -14,6 +14,7 @@
         <div class="row">
             <?php 
                 include "conexao.php";
+                include "funcoes.php";
 
                 // Implementação do método POST para captação dos dados informados pelo funcionário.
                 $nome = $_POST['nome'];

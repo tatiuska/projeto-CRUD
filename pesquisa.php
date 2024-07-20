@@ -47,6 +47,9 @@
                     </thead>
                     <tbody>
                         <?php
+
+                            include "funcoes.php"; // Inclusão do arquivo onde estão as funções converter_data e mensagem
+
                             // Percorrer os dados, caso existam.
                             // Função que percorre o vetor e marca o próximo, passa como parâmetro a variável $dados.
                             while ($linha = mysqli_fetch_assoc($dados)) {
@@ -55,7 +58,7 @@
                                 $endereco = $linha['endereco'];
                                 $telefone = $linha['telefone'];
                                 $dt_nasc = $linha['dt_nasc'];
-                                $dt_nasc = mostra_data($dt_nasc); // Chamando a função mostra_data, que altera a apresentação da data de nascimento.
+                                $dt_nasc = converter_data($dt_nasc); // Chamando a função converter_data, que altera a apresentação da data de nascimento.
                                 $email = $linha['email'];
                                 
                                 // Imprimindo os dados de saída do banco de dados.
@@ -67,14 +70,11 @@
                                         <td>$dt_nasc</td>
                                         <td>$email</td>
                                         <td>
-                                            <a href='#' class='btn btn-outline-success btn-sm'>Editar</a> 
+                                            <a href='cadastro-edit.php?id=$id_pessoa' class='btn btn-outline-success btn-sm'>Editar</a> 
                                             <a href='#' class='btn btn-outline-danger btn-sm'>Excluir</a>
-                                        </td>
-                                    </tr>"
-                                ;
-
+                                        </td>    
+                                    </tr>";
                             }
-
                         ?>
                     </tbody>
                 </table>
