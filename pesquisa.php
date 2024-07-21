@@ -87,18 +87,20 @@
     <div class="modal fade" id="confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar exclusão</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Deseja realmente excluir o cadastro?</p>
-                <p id="nome_pessoa">Nome da pessoa</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                <button type="button" class="btn btn-success">Sim</button>
-            </div>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar exclusão</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="excluir_script.php" method="POST">
+                    <div class="modal-body">
+                        <p>Deseja realmente excluir o cadastro?</p>
+                        <p id="nome_pessoa">Nome da pessoa</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                        <input type="submit" class="btn btn-danger" value="Sim">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
