@@ -62,6 +62,7 @@
                                 $email = $linha['email'];
                                 
                                 // Imprimindo os dados de saída do banco de dados.
+                                // linha 74: precisou concatenar o conteúdo do onclick (onlcick="pegar_dados('$id_pessoa', '$nome')") por conta das aspas duplas
                                 echo "<tr>
                                         <th scope='row'>$id_pessoa</th>
                                         <td>$nome</td>
@@ -71,7 +72,7 @@
                                         <td>$email</td>
                                         <td>
                                             <a href='cadastro-edit.php?id=$id_pessoa' class='btn btn-outline-success btn-sm'>Editar</a> 
-                                            <a href='#' class='btn btn-outline-danger btn-sm' data-bs-toggle='modal' data-bs-target='#confirma'>Excluir</a>
+                                            <a href='#' class='btn btn-outline-danger btn-sm' data-bs-toggle='modal' data-bs-target='#confirma' onclick=" . '"' . "pegar_dados('$id_pessoa', '$nome')" . '"' . ">Excluir</a>
                                         </td>    
                                     </tr>";
                             }
@@ -91,19 +92,29 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar exclusão</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="excluir_script.php" method="POST">
+                <form action="excluir-script.php" method="POST">
                     <div class="modal-body">
-                        <p>Deseja realmente excluir o cadastro?</p>
-                        <p id="nome_pessoa">Nome da pessoa</p>
+                        <p>Deseja realmente excluir o cadastro <b id="nome">Nome da pessoa</b>?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                        <input type="hidden" name="nome" id="nome_excluido" value="">
+                        <input type="hidden" name="id" id="id_pessoa" value="">
                         <input type="submit" class="btn btn-danger" value="Sim">
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- Script para puxar nome da pessoa na modal de exclusão de cadastro -->
+    <script type="text/javascript">
+        function pegar_dados(id, nome) {
+            document.getElementById('nome').innerHTML = nome;
+            document.getElementById('nome_excluido').value = nome;
+            document.getElementById('id_pessoa').value = id;
+        }
+    </script>
 
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
