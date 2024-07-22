@@ -15,7 +15,7 @@
             <div class="col">
                 <h1>Cadastro</h1>
                 <!-- Formulário para cadastro de funcionários -->
-                <form action="cadastro-script.php" method="POST">
+                <form action="cadastro-script.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nome" class="form-label">Nome completo</label>
                         <input type="text" class="form-control" name="nome" required> <!-- faz com que não aceite formulários sem nome -->
@@ -35,6 +35,10 @@
                     <div class="form-group">
                         <label for="dt_nasc" class="form-label">Data de Nascimento</label>
                         <input type="date" class="form-control" name="dt_nasc">
+                    </div>
+                    <div class="form-group">
+                        <label for="foto" class="form-label">Foto</label>
+                        <input type="file" class="form-control" name="foto" accept=".jpg">
                     </div>
                     </br>
                     <div class="form-group">
